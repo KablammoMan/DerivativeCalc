@@ -1,16 +1,14 @@
 def deriva(eff: int, x: bool, exp: int) -> str:
     "Returns the derivative of the argument parsed"
-    d = ""
     if x:
         if exp-1 == 0:
-            d += str(eff*exp)
+            return str(eff*exp)
         elif exp-1 == 1:
-            d += str(eff*exp)+"x"
+            return str(eff*exp)+"x"
         else:
-            d += str(eff*exp)+"x^"+str(exp-1)
+            return str(eff*exp)+"x^"+str(exp-1)
     else:
-        d += "0"
-    return d
+        return "0"
 
 def derive(eq: str, rec: bool) -> str:
     "Returns the derivative equation of a function"
@@ -30,7 +28,7 @@ def derive(eq: str, rec: bool) -> str:
     sa = split_arg(arg)
     da = deriva(sa[0], sa[1], sa[2])
     if da != "0":
-        newe += da + i
+        newe += da
     if newe[-1] == "+" or newe[-1] == "-":
         newe = newe[:-1]
     if not rec or not "^" in newe:
