@@ -61,7 +61,7 @@ def split_arg(arg: str) -> list:
     ret = [eff, x_p, exp]
     return ret
 
-inp = input("Enter eq: ")
+inp = input("Enter eq: ").lower()
 rec = ""
 while not rec in ["y", "n"]:
     rec = input("Rec (y/N)? ").lower()
